@@ -14,3 +14,12 @@ struct eleviTipA {
 		return round((double) ((3 * medie) + teza) / 4);
 	}
 };
+
+struct sportiviTipA {
+	int luna;
+	int an;
+	
+	int varsta() {
+		return ((2022 - an) * 12) + (10 - luna);
+	}
+};

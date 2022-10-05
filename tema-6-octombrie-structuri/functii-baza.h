@@ -46,3 +46,5 @@ void sortareAlfabeticaNume(string nume[], string prenume[], int n) {
 		}
 	} while (flag == false);
 }
+
+

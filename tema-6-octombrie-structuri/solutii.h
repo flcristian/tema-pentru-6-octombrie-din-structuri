@@ -85,7 +85,11 @@ void solutiepb4() {
 // cea medie.
 
 void solutiepb5() {
-
+	int n;
+	sportiviTipA x[100];
+	citireSportiviTipA(x, n);
+	double medie = mediaVarstei(x, n);
+	afisareRaspunsPb5(x, medie, n);
 }
 
 // 6. Se citesc de la tastatura datele referitoare la m
@@ -168,7 +172,9 @@ void solutiepb5() {
 // In fisierul in.txt se va citi de pe fiecare linie
 // perechea: numarator, numitor. Fractiile rezultate vor
 // fi afisate in acelasi format in fisierul text out.txt.
-// 
+
+
+
 // 14. Se considera doua fisiere note.txt si nume.txt.
 // Unul contine pe fiecare linie cate doua numere 
 // reprezentand notele la chimie ale unor elevi, iar pe 
@@ -180,7 +186,9 @@ void solutiepb5() {
 // liniilor prin cate un spatiu. Elevii nu vor fi scrisi
 // in ordinea descrescatoare a mediilor, iar la medii egale, 
 // crescator dupa nume.
-// 
+
+
+
 // 15. Intr-o scoala exista n clase de XII-a, fiecare
 // cu cate m elevi. Pentru fiecare dintre acestia se 
 // cunosc: numele si prenumele, clasa din care fac partre

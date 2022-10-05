@@ -51,6 +51,19 @@ void citireEleviTipA(eleviTipA x[], int& n) {
 	}
 }
 
+void citireSportiviTipA(sportiviTipA x[], int& n) {
+	ifstream f("pb-sportivi.txt");
+	f >> n;
+
+	for (int i = 0; i < n; i++) {
+		sportiviTipA a;
+		f >> a.luna;
+		f >> a.an;
+		
+		x[i] = a;
+	}
+}
+
 // Problema 1
 
 void mediiSemestriale(eleviTipA x[], int n, int medii[]) {
@@ -157,3 +170,26 @@ void afisareRaspunsPb4(string nume[], string prenume[], int n) {
 		cout << nume[i] << " " << prenume[i] << endl;
 	}
 }
+
+// Problema 5
+
+double mediaVarstei(sportiviTipA x[], int n) {
+	int s = 0;
+	for (int i = 0; i < n; i++) {
+		s += x[i].varsta();
+	}
+	return (double)s / n;
+}
+
+void afisareRaspunsPb5(sportiviTipA x[], double medie, int n) {
+	cout << "(Varsta a fost rotunjita pentru afisare)" << endl;
+	cout << "Varsta medie a sportivilor este " << round(medie / 12) << ", iar cei mai mici decat aceasta" << endl;
+	cout << "sunt cei nascuti in datele :" << endl;
+	for (int i = 0; i < n; i++) {
+		if (x[i].varsta() < medie) {
+			cout << x[i].luna << "-" << x[i].an << endl;
+		}
+	}
+}
+
+// Problema 6

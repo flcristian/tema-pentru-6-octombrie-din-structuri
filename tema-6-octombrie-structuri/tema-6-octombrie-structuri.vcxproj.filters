@@ -37,5 +37,8 @@
     <Text Include="pb-elevi.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="pb-sportivi.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
