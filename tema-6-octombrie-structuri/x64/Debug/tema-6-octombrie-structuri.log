@@ -1,4 +1,3 @@
 ﻿  tema-6-octombrie-structuri.cpp
 D:\mycode\structuri\tema-6-octombrie-structuri\tema-6-octombrie-structuri\structuri.h(14,15): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-D:\mycode\structuri\tema-6-octombrie-structuri\tema-6-octombrie-structuri\solutii.h(21,38): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   tema-6-octombrie-structuri.vcxproj -> D:\mycode\structuri\tema-6-octombrie-structuri\x64\Debug\tema-6-octombrie-structuri.exe

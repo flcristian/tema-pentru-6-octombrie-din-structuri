@@ -12,8 +12,8 @@
 void solutiepb1() {
 	int n;
 	int medii[100];
-	eleviPb1 x[100];
-	citirePb1(x, n);
+	eleviTipA x[100];
+	citireEleviTipA(x, n);
 	mediiSemestriale(x, n, medii);
 	int max;
 	double medieClasa;
@@ -30,6 +30,15 @@ void solutiepb1() {
 // si prenumele elevilor care au promovat la
 // aceasta disciplina.
 
+void solutiepb2() {
+	int n, m;
+	int medii[100], indici[100];
+	eleviTipA x[100];
+	citireEleviTipA(x, n);
+	atribuireIndiciSiMedii(x, n, medii, indici, m);
+	sortareDescrescatorDupaMedie(medii, indici, m);
+	afisareRaspunsPb2(x, indici, m);
+}
 
 
 // 3. Se considera o lista formata din datele
@@ -40,14 +49,32 @@ void solutiepb1() {
 // afiseaza in ordine alfabetica elevii
 // corigenti la Informatica.
 
-
+void solutiepb3() {
+	int n, m;
+	string nume[100], prenume[100];
+	eleviTipA x[100];
+	citireEleviTipA(x, n);
+	atribuieNumeSiPrenume(x, n, nume, prenume, m);
+	sortareAlfabeticaNume(nume, prenume, m);
+	afisareRaspunsPb3(nume, prenume, m);
+}
 
 // 4. Pentru a scrie catalogul, dirigintele are
 // nevoie de numele si prenumele elevilor. Sa se
 // ordoneze aceste date alfabetic, dupa nume, iar
 // elevii cu acelasi nume sa se ordoneze alfabetic
 // dupa prenume.
-// 
+
+void solutiepb4() {
+	int n;
+	string nume[100], prenume[100];
+	eleviTipA x[100];
+	citireEleviTipA(x, n);
+	numeSiPrenumePb4(x, n, nume, prenume);
+	sortareAlfabeticaNume(nume, prenume, n);
+	afisareRaspunsPb4(nume, prenume, n);
+}
+
 // 5. Se cunoaste numarul de sportivi participanti la
 // o competitie oarecare. Pentru fiecare dintre ei se
 // cunoaste data nasterii (luna si anul). Cunoscandu-se
@@ -57,7 +84,9 @@ void solutiepb1() {
 // nastere ale sportivilor cu varsta mai mica decat
 // cea medie.
 
+void solutiepb5() {
 
+}
 
 // 6. Se citesc de la tastatura datele referitoare la m
 // elevi: nume, prenume, numarul de membri ai familiei

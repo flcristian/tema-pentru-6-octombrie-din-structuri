@@ -4,7 +4,7 @@
 
 using namespace std;
 
-struct eleviPb1 {
+struct eleviTipA {
 	string nume;
 	string prenume;
 	int medie;
