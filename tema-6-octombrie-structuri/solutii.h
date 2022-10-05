@@ -99,14 +99,30 @@ void solutiepb5() {
 // o valoare limitata L. Realizati un program care afiseaza
 // elevii ce nu au dreptul la bursa, in ordine alfabetica.
 
-
+void solutiepb6() {
+	int n, m, L;
+	string nume[100], prenume[100];
+	bursaTipA x[100];
+	citireBursaTipA(x, n);
+	cout << "Introduceti limita pentru a primi bursa : ";
+	cin >> L;
+	atribuirePb6(x, n, L, nume, prenume, m);
+	sortareAlfabeticaNume(nume, prenume, m);
+	afisareRaspunsPb6(nume, prenume, m);
+}
 
 // 7. Se considera un sir de n fractii (numitor, numarator).
 // Afisati numarul de fractii echivalente cu ultima citata.
 // Exemplu pentru n = 4 si fractiile (3,5);(36,60);(2,4);(12,20).
 // Se va afisa : 2.
 
-
+void solutiepb7() {
+	int n, numar;
+	fractieTipA x[100];
+	citireFractieTipA(x, n);
+	rezolvarePb7(x, n, numar);
+	cout << "Numarul fractilor cu aceasta proprietate este " << numar << "." << endl;
+}
 
 // 8. Pentru n numere complexe, caror li se cunosc partea
 // reala si cea imaginiara, sa se afiseze in ordine
@@ -114,7 +130,22 @@ void solutiepb5() {
 // [a,b]. Valorile reale a si b se citesc de la tastatura.
 // Modulele rezultate vor fi afisate cu 3 zecimale.
 
-
+void solutiepb8() {
+	int n, m;
+	double module[100];
+	complexTipA x[100];
+	citireComplexTipA(x, n);
+	int a, b;
+	cout << "Valorea lui a trebuie sa fie mai mica decat cea a lui b." << endl;
+	cout << "Introduceti a : ";
+	cin >> a;
+	cout << "Introduceti b : ";
+	cin >> b;
+	atribuireModule(x, n, module, m, a, b);
+	bubbleSortDouble(module, m);
+	afisareRaspunsPb7(module, m, a, b);
+	
+}
 
 // 9. Pentru o clasa de n elevi se cunosc urmatoarele date:
 // numele, prenumele, varsta si inaltimea. Se doreste
@@ -124,7 +155,24 @@ void solutiepb5() {
 // dupa nume, iar in situatia unor nume identice, vor fi
 // ordonati crescator dupa prenume. Se va afisa pentru fiecare
 // elev numele, prenumele si inaltimea.
-// 
+
+void solutiepb9() {
+	int n, m;
+	double h1, h2;
+	double inaltimi[100];
+	string nume[100], prenume[100];
+	eleviTipB x[100];
+	citireEleviTipB(x, n);
+	cout << "Valoarea lui h1 trebuie sa fie mai mica decat cea a lui h2." << endl;
+	cout << "Introduceti inaltimea h1 : ";
+	cin >> h1;
+	cout << "Introduceti inaltimea h2 : ";
+	cin >> h2;
+	atribuirePb9(x, n, nume, prenume, inaltimi, m, h1, h2);
+	sortareAlfabeticaNumePb9(nume, prenume, inaltimi, m);
+	afisareRaspunsPb9(nume, prenume, inaltimi, m);
+}
+
 // 10. Se considera un sir de n puncte in plan, pentru 
 // fiecare cunoscandu-se coordonatele intregi (x,y). Sa 
 // se realizeze un program care identifica un patrat de 

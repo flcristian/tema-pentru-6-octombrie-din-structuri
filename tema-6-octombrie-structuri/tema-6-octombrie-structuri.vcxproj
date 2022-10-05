@@ -136,7 +136,11 @@
     <ClInclude Include="structuri.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="pb-elevi.txt" />
+    <Text Include="pb-bursa.txt" />
+    <Text Include="pb-complexe.txt" />
+    <Text Include="pb-eleviA.txt" />
+    <Text Include="pb-eleviB.txt" />
+    <Text Include="pb-fractii.txt" />
     <Text Include="pb-sportivi.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

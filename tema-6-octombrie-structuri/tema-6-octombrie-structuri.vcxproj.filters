@@ -34,10 +34,22 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="pb-elevi.txt">
+    <Text Include="pb-eleviA.txt">
       <Filter>Resource Files</Filter>
     </Text>
     <Text Include="pb-sportivi.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="pb-bursa.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="pb-fractii.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="pb-complexe.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="pb-eleviB.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

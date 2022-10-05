@@ -47,4 +47,40 @@ void sortareAlfabeticaNume(string nume[], string prenume[], int n) {
 	} while (flag == false);
 }
 
+void schimbarePozitiiNumePb9(string nume[], string prenume[], double inaltimi[], int i, int j) {
+	string r1 = nume[i];
+	string r2 = prenume[i];
+	double r3 = inaltimi[i];
+	nume[i] = nume[j];
+	nume[j] = r1;
+	prenume[i] = prenume[j];
+	prenume[j] = r2;
+	inaltimi[i] = inaltimi[j];
+	inaltimi[j] = r3;
+}
+
+void sortareAlfabeticaNumePb9(string nume[], string prenume[], double inaltimi[], int n) {
+	bool flag = true;
+	do {
+		flag = true;
+		for (int i = 0; i < n - 1; i++) {
+			int k = sortareString(nume[i], nume[i + 1]);
+			if (k != -1) {
+				if (k == 0) {
+					schimbarePozitiiNumePb9(nume, prenume, inaltimi, i, i + 1);
+					flag = false;
+				}
+			}
+			else {
+				int j = sortareString(prenume[i], prenume[i + 1]);
+				if (j != -1) {
+					if (j == 0) {
+						schimbarePozitiiNumePb9(nume, prenume, inaltimi, i, i + 1);
+						flag = false;
+					}
+				}
+			}
+		}
+	} while (flag == false);
+}
 

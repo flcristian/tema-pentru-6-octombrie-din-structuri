@@ -1,5 +1,7 @@
 #include "functii-baza.h"
 
+// Afisari Vectori
+
 void afisareVectorDouble(double x[], int n) {
 	cout << "x[" << n << "] = {";
 	int c = n;
@@ -36,8 +38,10 @@ void afisareVectorString(string x[], int n) {
 	}
 }
 
+// Citiri
+
 void citireEleviTipA(eleviTipA x[], int& n) {
-	ifstream f("pb-elevi.txt");
+	ifstream f("pb-eleviA.txt");
 	f >> n;
 
 	for (int i = 0; i < n; i++) {
@@ -48,6 +52,22 @@ void citireEleviTipA(eleviTipA x[], int& n) {
 		f >> elev.teza;
 
 		x[i] = elev;
+	}
+}
+
+void citireEleviTipB(eleviTipB x[], int& n) {
+	ifstream f("pb-eleviB.txt");
+	f >> n;
+	
+	for (int i = 0; i < n; i++) {
+		eleviTipB a;
+
+		f >> a.nume;
+		f >> a.prenume;
+		f >> a.varsta;
+		f >> a.inaltime;
+
+		x[i] = a;
 	}
 }
 
@@ -62,6 +82,63 @@ void citireSportiviTipA(sportiviTipA x[], int& n) {
 		
 		x[i] = a;
 	}
+}
+
+void citireBursaTipA(bursaTipA x[], int& n) {
+	ifstream f("pb-bursa.txt");
+	f >> n;
+
+	for (int i = 0; i < n; i++) {
+		bursaTipA b;
+
+		f >> b.nume;
+		f >> b.prenume;
+		f >> b.nrmembrii;
+		f >> b.venit;
+
+		x[i] = b;
+	}
+}
+
+void citireFractieTipA(fractieTipA x[], int& n) {
+	ifstream f("pb-fractii.txt");
+	f >> n;
+	
+	for (int i = 0; i < n; i++) {
+		fractieTipA fractie;
+
+		f >> fractie.numitor;
+		f >> fractie.numarator;
+		
+		x[i] = fractie;
+	}
+}
+
+void citireComplexTipA(complexTipA x[], int& n) {
+	ifstream f("pb-complexe.txt");
+	f >> n;
+
+	for (int i = 0; i < n; i++) {
+		f >> x[i].reala;
+		f >> x[i].imaginara;
+	}
+}
+
+// Metode de sortare
+
+void bubbleSortDouble(double x[], int n) {
+	bool flag = true;
+	do {
+		flag = true;
+		for (int i = 0; i < n - 1; i++) {
+			if (x[i] > x[i + 1]) {
+				double r = x[i];
+				x[i] = x[i + 1];
+				x[i + 1] = r;
+				flag = false;
+			}
+		}
+	} while (flag == false);
 }
 
 // Problema 1
@@ -193,3 +270,78 @@ void afisareRaspunsPb5(sportiviTipA x[], double medie, int n) {
 }
 
 // Problema 6
+
+void atribuirePb6(bursaTipA x[], int n, int L, string nume[], string prenume[], int& m) {
+	m = 0;
+	for (int i = 0; i < n; i++) {
+		if (x[i].venitPerMembru() > L) {
+			nume[m] = x[i].nume;
+			prenume[m] = x[i].prenume;
+			m++;
+		}
+	}
+}
+
+void afisareRaspunsPb6(string nume[], string prenume[], int m) {
+	cout << "Elevii care nu primesc bursa in ordine alfabetica sunt :" << endl;
+	for (int i = 0; i < m; i++) {
+		cout << nume[i] << " " << prenume[i] << endl;
+	}
+}
+
+// Problema 7
+
+void rezolvarePb7(fractieTipA x[], int n, int& numar) {
+	numar = 0;
+	double val = x[n - 1].valoare();
+	for (int i = 0; i < n - 1; i++) {
+		if (x[i].valoare() == x[n - 1].valoare()) {
+			numar++;
+		}
+	}
+}
+
+// Problema 8
+
+void atribuireModule(complexTipA x[], int n, double module[], int& m, int a, int b) {
+	m = 0;
+	for (int i = 0; i < n; i++) {
+		double modul = x[i].modul();
+		if (modul < a || modul > b) {
+			module[m] = modul;
+			m++;
+		}
+	}
+}
+
+void afisareRaspunsPb7(double module[], int m, int a, int b) {
+	cout << "Modulele in ordine crescatoare care nu apartin intervalului [" << a << ", " << b << "] sunt :" << endl;
+	for (int i = 0; i < m; i++) {
+		cout << module[i] << endl;
+	}
+}
+
+// Problema 9
+
+void atribuirePb9(eleviTipB x[], int n, string nume[], string prenume[], double inaltimi[], int& m, double h1, double h2) {
+	m = 0;
+	for (int i = 0; i < n; i++) {
+		if (x[i].varsta >= 14 && x[i].inaltime >= h1 && x[i].inaltime <= h2) {
+			nume[m] = x[i].nume;
+			prenume[m] = x[i].prenume;
+			inaltimi[m] = x[i].inaltime;
+			m++;
+		}
+	}
+}
+
+void afisareRaspunsPb9(string nume[], string prenume[], double inaltimi[], int n) {
+	cout << "Elevii care au implinit 14 ani in ordine alfabetica si au inaltimea in acest interval sunt :" << endl;
+	for (int i = 0; i < n; i++) {
+		cout << nume[i] << " " << prenume[i] << " - " << inaltimi[i] << endl;
+	}
+}
+
+
+
+
