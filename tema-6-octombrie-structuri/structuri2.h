@@ -69,3 +69,17 @@ struct Triunghi {
 		return 0;
 	}
 };
+
+struct Elev {
+	string nume;
+	string prenume;
+	double media1;
+	double media2;
+	string clasa;
+
+	double mediaAnuala() {
+		return (double)(media1 + media2) / 2;
+	}
+};
+
+

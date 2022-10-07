@@ -263,11 +263,13 @@ void solutiepb13() {
 
 void solutiepb14() {
 	int n;
+	double medii[100];
+	string nume[100];
 	eleviTipC x[100];
 	citireEleviTipC(x, n);
-	for (int i = 0; i < n; i++) {
-		cout << x[i].nota1 << " " << x[i].nota2 << " " << x[i].mediaElevului() << endl;
-	}
+	atribuirePb14(x, nume, medii, n);
+	sortareDupaMedieSiNume(medii, nume, n);
+	outputPb14(medii, nume, n);
 }
 
 // 15. Intr-o scoala exista n clase de XII-a, fiecare
@@ -280,4 +282,13 @@ void solutiepb14() {
 //    examenul de bacalaureat, ordonati dupa nume si
 //    prenume.
 
-// - - -
+void solutiepb15() {
+	int n, m;
+	Elev x[10][10];
+	citirePb15(x, n, m);
+	int i, j;
+	indiciSefPromotie(x, n, m, i, j);
+	cout << "Numele si prenumele sefului de promotie : " << x[i][j].nume << " " << x[i][j].prenume << "." << endl;
+	cout << "=========================================" << endl;
+	listaCorigentiPeClase(x, n, m);
+}

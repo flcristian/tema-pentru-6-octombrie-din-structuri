@@ -1,0 +1,21 @@
+4 5
+Victor Gracey 9.0 6.52 A
+Brandice Baudou 7.54 1.4 A
+Giselbert Hawking 9.65 4.3 A
+Randa Gatiss 3.38 6.02 A
+Desmund Nielson 2.34 8.64 A
+Nat Stallworthy 9.46 6.97 B
+Heather Stilgo 1.57 9.09 B
+Dorree Dagnall 3.38 8.32 B
+Erena Quye 5.57 9.97 B
+Germayne Cornock 6.15 8.26 B
+Pascal Fancutt 6.11 5.0 C
+Corinna McCourtie 9.13 1.8 C
+Felice Slobom 1.35 6.81 C
+Rozanne Glidden 5.93 9.21 C
+Sly Djuricic 3.1 9.99 C
+Michal Hallett 1.59 5.75 D
+Laureen Wyeth 9.71 4.27 D
+Ad Tofanini 4.67 3.03 D
+Bobina Acom 8.9 1.95 D
+Augustina Harvett 3.02 8.41 D

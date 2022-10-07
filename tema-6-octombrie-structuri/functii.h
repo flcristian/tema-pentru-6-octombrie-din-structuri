@@ -467,3 +467,76 @@ void introducereFisierValoriPb13(fractieTipA x[], int indici[], int m) {
 		f << x[indici[i]].numitor << " " << x[indici[i]].numarator << endl;
 	}
 }
+
+// Problema 14
+
+void atribuirePb14(eleviTipC x[], string nume[], double medii[], int n) {
+	for (int i = 0; i < n; i++) {
+		cout << x[i].mediaElevului() << " ";
+		cout << x[i].nume << endl;
+		medii[i] = x[i].mediaElevului();
+		nume[i] = x[i].nume;
+	}
+}
+
+void outputPb14(double medii[], string nume[], int n) {
+	ofstream f("final.txt");
+	for (int i = 0; i < n; i++) {
+		f << medii[i] << " " << nume[i] << endl;
+	}
+}
+
+// Problema 15
+
+void citirePb15(Elev x[10][10], int& n, int& m) {
+	ifstream f("elevi-pe-clase.txt");
+	f >> n, f >> m;
+
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++) {
+			f >> x[i][j].nume;
+			f >> x[i][j].prenume;
+			f >> x[i][j].media1;
+			f >> x[i][j].media2;
+			f >> x[i][j].clasa;
+		}
+	}
+}
+
+void indiciSefPromotie(Elev x[10][10], int n, int m, int& in, int& im) {
+	double max = 0;
+	in = 0, im = 0;
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++) {
+			if (x[i][i].mediaAnuala() > max) {
+				max = x[i][i].mediaAnuala();
+				in = i;
+				im = j;
+			}
+		}
+	}
+}
+
+void listaCorigentiPeClase(Elev x[10][10], int n, int m) {
+	for (int i = 0; i < n; i++) {
+		cout << "Elevii care nu vor putea sustine bacalaureatul din clasa " << x[i][0].clasa << " :" << endl;
+		int c = 0;
+		string nume[100], prenume[100];
+		for (int j = 0; j < m; j++) {
+			if (x[i][j].mediaAnuala() < 5) {
+				nume[c] = x[i][j].nume;
+				prenume[c] = x[i][j].prenume;
+				c++;
+			}
+		}
+		if (c != 0) {
+			sortareAlfabeticaNume(nume, prenume, c);
+			for (int k = 0; k < c; k++) {
+				cout << nume[k] << " " << prenume[k] << endl;
+			}
+		}
+		else {
+			cout << "- Nu exista elevi care nu pot sustine bacalaureatul in aceasta clasa." << endl;
+		}
+	}
+}

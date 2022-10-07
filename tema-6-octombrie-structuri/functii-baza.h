@@ -115,3 +115,32 @@ void sortareValoareFractie(int indici[], double valori[], int m) {
 		}
 	} while (flag == false);
 }
+
+void sortareDupaMedieSiNume(double medii[], string nume[], int n) {
+	bool flag = true;
+	do {
+		flag = true;
+		for (int i = 0; i < n - 1; i++) {
+			if (medii[i] < medii[i + 1]) {
+				double r1 = medii[i];
+				string r2 = nume[i];
+				medii[i] = medii[i + 1];
+				medii[i + 1] = r1;
+				nume[i] = nume[i + 1];
+				nume[i + 1] = r2;
+				flag = false;
+			}
+			if (medii[i] == medii[i + 1]) {
+				if (sortareString(nume[i], nume[i + 1]) == 0) {
+					double r1 = medii[i];
+					string r2 = nume[i];
+					medii[i] = medii[i + 1];
+					medii[i + 1] = r1;
+					nume[i] = nume[i + 1];
+					nume[i + 1] = r2;
+					flag = false;
+				}
+			}
+		}
+	} while (flag == false);
+}

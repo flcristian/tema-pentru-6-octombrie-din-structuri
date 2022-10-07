@@ -137,6 +137,7 @@
     <ClInclude Include="structuri2.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="elevi-pe-clase.txt" />
     <Text Include="final.txt" />
     <Text Include="note.txt" />
     <Text Include="nume.txt" />
