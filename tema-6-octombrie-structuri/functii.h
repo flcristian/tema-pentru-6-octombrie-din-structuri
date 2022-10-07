@@ -1,4 +1,4 @@
-#include "functii-baza.h"
+#include "structuri2.h"
 
 // Afisari Vectori
 
@@ -71,6 +71,22 @@ void citireEleviTipB(eleviTipB x[], int& n) {
 	}
 }
 
+void citireEleviTipC(eleviTipC x[], int& n) {
+	ifstream f1("note.txt");
+	n = 0;
+
+	while (!f1.eof()) {
+		f1 >> x[n].nota1;
+		f1 >> x[n].nota2;
+		n++;
+	}
+
+	ifstream f2("nume.txt");
+	for (int i = 0; i < n; i++) {
+		f2 >> x[i].nume;
+	}
+}
+
 void citireSportiviTipA(sportiviTipA x[], int& n) {
 	ifstream f("pb-sportivi.txt");
 	f >> n;
@@ -122,6 +138,37 @@ void citireComplexTipA(complexTipA x[], int& n) {
 		f >> x[i].reala;
 		f >> x[i].imaginara;
 	}
+}
+
+void citirePunct(Punct x[], int& n) {
+	ifstream f("pb-puncte.txt");
+	f >> n;
+
+	for (int i = 0; i < n; i++) {
+		f >> x[i].x;
+		f >> x[i].y;
+	}
+}
+
+void citirePbTriunghi(Punct x[], Triunghi& y, int& n) {
+	ifstream f("pb-triunghi.txt");
+	f >> n;
+
+	for (int i = 0; i < n; i++) {
+		f >> x[i].x;
+		f >> x[i].y;
+	}
+
+	Punct p1, p2, p3;
+	f >> p1.x;
+	f >> p1.y;
+	f >> p2.x;
+	f >> p2.y;
+	f >> p3.x;
+	f >> p3.y;
+	y.a = p1;
+	y.b = p2;
+	y.c = p3;
 }
 
 // Metode de sortare
@@ -252,10 +299,10 @@ void afisareRaspunsPb4(string nume[], string prenume[], int n) {
 
 double mediaVarstei(sportiviTipA x[], int n) {
 	int s = 0;
-	for (int i = 0; i < n; i++) {
-		s += x[i].varsta();
-	}
-	return (double)s / n;
+for (int i = 0; i < n; i++) {
+	s += x[i].varsta();
+}
+return (double)s / n;
 }
 
 void afisareRaspunsPb5(sportiviTipA x[], double medie, int n) {
@@ -342,6 +389,81 @@ void afisareRaspunsPb9(string nume[], string prenume[], double inaltimi[], int n
 	}
 }
 
+// Problema 10
 
+int maxPunctePatrat(Punct x[], int n) {
+	int max = 0, indice = 0;
+	for (int i = 0; i < n; i++) {
+		int limitaStanga = x[i].y, limitaJos = x[i].x;
+		int limitaDreapta = x[i].y + n, limitaSus = x[i].x + n;
+		int counter = 0;
+		for (int j = 0; j < n; j++) {
+			if ((x[j].y >= limitaStanga && x[j].y <= limitaDreapta) && (x[j].x >= limitaJos && x[j].x <= limitaSus)) {
+				counter++;
+			}
+		}
+		if (counter > max) {
+			max = counter;
+			indice = i;
+		}
+		cout << i << " " << counter << endl;
+	}
+	return indice;
+}
 
+void afisareRaspunsPb10(Punct x[], int indice) {
+	cout << "Coltul stanga-jos al patratului care contine" << endl;
+	cout << "cele mai multe puncte este : ";
+	cout << "(" << x[indice].x << ", " << x[indice].y << ")";
+}
 
+// Problema 11
+
+int maxColiniareParalelaOx(Punct x[], int n) {
+	int max = 0;
+	for (int i = 0; i < n; i++) {
+		int counter = 0;
+		for (int j = 0; j < n; j++) {
+			if (x[j].y == x[i].y) {
+				counter++;
+			}
+		}
+		if (counter > max) {
+			max = counter;
+		}
+	}
+	return max;
+}
+
+// Problema 12
+
+int catePuncteInTriunghi(Punct x[], Triunghi t, int n) {
+	int c = 0;
+	for (int i = 0; i < n; i++) {
+		if (t.apartineTriunghiului(x[i])) {
+			c++;
+		}
+	}
+	return c;
+}
+
+// Problema 13
+
+void atribuireIndiciPb13(fractieTipA x[], int n, int indici[], double valori[], int& m) {
+	m = 0;
+	for (int i = 0; i < n; i++) {
+		if (celMaiMareDivizorComun(x[i].numitor, x[i].numarator) != 1) {
+			valori[m] = x[i].valoare();
+			indici[m] = i;
+			m++;
+		}
+	}
+}
+
+void introducereFisierValoriPb13(fractieTipA x[], int indici[], int m) {
+	ofstream f("out-fractii.txt");
+
+	for (int i = 0; i < m; i++) {
+		f << x[indici[i]].numitor << " " << x[indici[i]].numarator << endl;
+	}
+}

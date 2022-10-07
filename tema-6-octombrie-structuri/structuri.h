@@ -22,6 +22,20 @@ struct eleviTipB {
 	double inaltime;
 };
 
+struct eleviTipC {
+	int nota1;
+	int nota2;
+	string nume;
+
+	double mediaElevului() {
+		double medie = (double)(nota1 + nota2) / 2;
+		medie *= 100;
+		medie = (int)medie;
+		medie /= 100;
+		return medie;
+	}
+};
+
 struct sportiviTipA {
 	int luna;
 	int an;

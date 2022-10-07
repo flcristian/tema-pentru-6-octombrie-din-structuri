@@ -84,3 +84,34 @@ void sortareAlfabeticaNumePb9(string nume[], string prenume[], double inaltimi[]
 	} while (flag == false);
 }
 
+int celMaiMareDivizorComun(int a, int b) {
+	if (a > b) {
+		int r = a;
+		a = b;
+		b = a;
+	}
+
+	for (int i = a; i >= 1; i--) {
+		if (a % i == 0 && b % i == 0) {
+			return i;
+		}
+	}
+}
+
+void sortareValoareFractie(int indici[], double valori[], int m) {
+	bool flag = true;
+	do {
+		flag = true;
+		for (int i = 0; i < m - 1; i++) {
+			if (valori[i] > valori[i + 1]) {
+				double r1 = valori[i];
+				int r2 = indici[i];
+				valori[i] = valori[i + 1];
+				indici[i] = indici[i + 1];
+				valori[i + 1] = r1;
+				indici[i + 1] = r2;
+				flag = false;
+			}
+		}
+	} while (flag == false);
+}

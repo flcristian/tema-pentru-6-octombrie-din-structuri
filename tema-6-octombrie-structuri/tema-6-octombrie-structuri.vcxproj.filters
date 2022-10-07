@@ -32,6 +32,9 @@
     <ClInclude Include="functii.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="structuri2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="pb-eleviA.txt">
@@ -50,6 +53,24 @@
       <Filter>Resource Files</Filter>
     </Text>
     <Text Include="pb-eleviB.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="pb-puncte.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="pb-triunghi.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="out-fractii.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="note.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="nume.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="final.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

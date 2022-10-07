@@ -185,7 +185,13 @@ void solutiepb9() {
 // (-10,-5);(4,1);(3,3);(1,2);(10,8)
 // Se va afisa : (1,2).
 
-
+void solutiepb10() {
+	int n;
+	Punct x[100];
+	citirePunct(x, n);
+	int indice = maxPunctePatrat(x, n);
+	afisareRaspunsPb10(x, indice);
+}
 
 // 11. Se considera un sir de n puncte in plan,
 // pentru care fiecare cunoscandu-se coordonatele
@@ -196,7 +202,12 @@ void solutiepb9() {
 // (-10,-5);(4,-5);(3,3);(1,2);(10,3);(5,3)
 // Se va afisa : 3.
 
-
+void solutiepb11() {
+	int n;
+	Punct x[100];
+	citirePunct(x, n);
+	cout << "Numarul maxim de puncte coliniare pe o paralela axei Ox este " << maxColiniareParalelaOx(x, n) << "." << endl;
+}
 
 // 12. Se considera un sir de n puncte in plan, pentru
 // fiecare cunoscandu-se coordonatele intregi (x,y).
@@ -211,7 +222,13 @@ void solutiepb9() {
 // (1,1);(5,10);(10,1)
 // Se va afisa : 2.
 
-
+void solutiepb12() {
+	int n;
+	Punct x[100];
+	Triunghi t;
+	citirePbTriunghi(x, t, n);
+	cout << catePuncteInTriunghi(x, t, n) << " puncte sunt inafara triunghiului." << endl;
+}
 
 // 13. Se considera un sir de n fractii identificate
 // prin numitor si numarator. Sa se stearga toate
@@ -221,7 +238,16 @@ void solutiepb9() {
 // perechea: numarator, numitor. Fractiile rezultate vor
 // fi afisate in acelasi format in fisierul text out.txt.
 
-
+void solutiepb13() {
+	int n, m;
+	int indici[100];
+	double valori[100];
+	fractieTipA x[100];
+	citireFractieTipA(x, n);
+	atribuireIndiciPb13(x, n, indici, valori, m);
+	sortareValoareFractie(indici, valori, m);
+	introducereFisierValoriPb13(x, indici, m);
+}
 
 // 14. Se considera doua fisiere note.txt si nume.txt.
 // Unul contine pe fiecare linie cate doua numere 
@@ -231,11 +257,18 @@ void solutiepb9() {
 // in care pe fiecare linie sa se regaseasca numele
 // elevului si media la chimie exprimata cu doua zecimale.
 // Cele doua valori vor fi despartite in cadrul
-// liniilor prin cate un spatiu. Elevii nu vor fi scrisi
+// liniilor prin cate un spatiu. Elevii vor fi scrisi
 // in ordinea descrescatoare a mediilor, iar la medii egale, 
 // crescator dupa nume.
 
-
+void solutiepb14() {
+	int n;
+	eleviTipC x[100];
+	citireEleviTipC(x, n);
+	for (int i = 0; i < n; i++) {
+		cout << x[i].nota1 << " " << x[i].nota2 << " " << x[i].mediaElevului() << endl;
+	}
+}
 
 // 15. Intr-o scoala exista n clase de XII-a, fiecare
 // cu cate m elevi. Pentru fiecare dintre acestia se 
@@ -246,3 +279,5 @@ void solutiepb9() {
 //	- lista pe clase a elevilor care nu vor sustine
 //    examenul de bacalaureat, ordonati dupa nume si
 //    prenume.
+
+// - - -

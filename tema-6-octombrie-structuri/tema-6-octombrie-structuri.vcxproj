@@ -134,14 +134,21 @@
     <ClInclude Include="functii.h" />
     <ClInclude Include="solutii.h" />
     <ClInclude Include="structuri.h" />
+    <ClInclude Include="structuri2.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="final.txt" />
+    <Text Include="note.txt" />
+    <Text Include="nume.txt" />
+    <Text Include="out-fractii.txt" />
     <Text Include="pb-bursa.txt" />
     <Text Include="pb-complexe.txt" />
     <Text Include="pb-eleviA.txt" />
     <Text Include="pb-eleviB.txt" />
     <Text Include="pb-fractii.txt" />
+    <Text Include="pb-puncte.txt" />
     <Text Include="pb-sportivi.txt" />
+    <Text Include="pb-triunghi.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
